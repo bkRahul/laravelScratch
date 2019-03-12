@@ -17,7 +17,10 @@
 
 
 Route::get('/', function () {
-    return view('home');
+
+    $tasks = ['Wake Up', 'Get Lunch', 'Leave for Work', 'Work', 'Come Home', ];
+
+    return view('home', ['tasks' => $tasks]);
 });
 
 Route::get('/about', function () {
