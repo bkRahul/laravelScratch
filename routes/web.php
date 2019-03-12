@@ -16,16 +16,9 @@
 // });
 
 
-Route::get('/', function () {
+Route::get('/', 'PagesController@home');
 
-    $tasks = ['Wake Up', 'Get Lunch', 'Leave for Work', 'Work', 'Come Home', ];
-
-    return view('home', ['tasks' => $tasks]);
-});
-
-Route::get('/about', function () {
-    return view('about');
-});
+Route::get('/about', 'PagesController@about');
 
 Route::get('/contact', function () {
     return view('contact');
