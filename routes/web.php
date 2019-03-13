@@ -23,3 +23,5 @@ Route::get('/about', 'PagesController@about');
 Route::get('/contact', function () {
     return view('contact');
 });
+
+Route::get('/projects', 'ProjectController@index');
