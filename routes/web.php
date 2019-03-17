@@ -26,6 +26,15 @@ Route::get('/contact', function () {
 
 Route::get('/projects', 'ProjectsController@index');
 
-Route::POST('/projects', 'ProjectsController@store');
-
 Route::get('/projects/create', 'ProjectsController@create');
+
+Route::get('/projects/{project}', 'ProjectsController@show');
+
+Route::post('/projects', 'ProjectsController@store');
+
+Route::get('/projects/{project}/edit', 'ProjectsController@edit');
+
+Route::patch('/projects/{project}', 'ProjectsController@update');
+
+Route::delete('/projects/{project}', 'ProjectsController@delete');
+
