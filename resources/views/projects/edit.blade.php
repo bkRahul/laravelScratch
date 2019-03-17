@@ -67,15 +67,16 @@
         <div class="flex-center position-ref full-height">
             <div class="content">
             <div class="title m-b-md">
-                    Create Projects
+                    Edit Projects
                 </div>
                 <div class="form" >
-                    <form method="POST" action="/projects">
+                    <form method="POST" action="/projects/{{ $project->id }}">
 
+                        {{ method_field('PATCH') }}
                         {{ csrf_field() }}
-                        <input type="text" name="title" placeholder="Project Title">
-                        <input type="textarea" name="description" placeholder="Project Description">
-                        <button type="submit">Create Project</button>
+                        <input type="text" name="title" placeholder="Project Title" value="{{ $project->title }}">
+                        <input type="textarea" name="description" placeholder="Project Description" value="{{ $project->description }}">
+                        <button type="submit">Update Project</button>
                          
                     </form>
 
