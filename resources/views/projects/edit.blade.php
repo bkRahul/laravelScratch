@@ -79,7 +79,14 @@
                         <button type="submit">Update Project</button>
                          
                     </form>
+                    <form method="POST" action="/projects/{{ $project->id }}">
 
+                        {{ method_field('Delete') }}
+                        {{ csrf_field() }}
+                     
+                        <button type="submit">Delete Project</button>
+                         
+                    </form>
                 </div>
             </div>
         </div>
