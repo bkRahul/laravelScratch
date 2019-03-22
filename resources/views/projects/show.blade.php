@@ -47,6 +47,9 @@
             .title {
                 font-size: 84px;
             }
+            .sub-title {
+                font-size: 48px;
+            }
 
             .links > a, .links > li {
                 color: #636b6f;
@@ -65,29 +68,14 @@
     </head>
     <body>
         <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-
             <div class="content">
-            <div class="title m-b-md">
-                    Projects
+                <div class="title m-b-md">
+                    {{ $project->title }}
                 </div>
-                <div class="links">
-                @foreach($projects as $project)
-                   <ul> <li><a href="{{ $project->id }}">{{ $project->title }}</a></li></ul>
-                @endforeach
+                <div class="sub-title m-b-md">
+                    {{ $project->description }}
                 </div>
+                 <div><a href="{{ $project->id }}/edit">Edit</a></div>    
             </div>
         </div>
     </body>

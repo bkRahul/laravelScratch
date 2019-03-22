@@ -24,17 +24,19 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
-Route::get('/projects', 'ProjectsController@index');
+Route::resource('projects', 'ProjectsController');
 
-Route::get('/projects/create', 'ProjectsController@create');
+// Route::get('/projects', 'ProjectsController@index');
 
-Route::get('/projects/{project}', 'ProjectsController@show');
+// Route::get('/projects/create', 'ProjectsController@create');
 
-Route::post('/projects', 'ProjectsController@store');
+// Route::get('/projects/{project}', 'ProjectsController@show');
 
-Route::get('/projects/{project}/edit', 'ProjectsController@edit');
+// Route::post('/projects', 'ProjectsController@store');
 
-Route::patch('/projects/{project}', 'ProjectsController@update');
+// Route::get('/projects/{project}/edit', 'ProjectsController@edit');
 
-Route::delete('/projects/{project}', 'ProjectsController@delete');
+// Route::patch('/projects/{project}', 'ProjectsController@update');
+
+// Route::delete('/projects/{project}', 'ProjectsController@delete');
 
