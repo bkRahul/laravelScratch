@@ -27,6 +27,7 @@
                         <button type="submit" class="button is-primary">Update Project</button>
                          </div></div>
                     </form>
+                    <br/>
                     <form method="POST" action="/projects/{{ $project->id }}">
 
                         {{ method_field('DELETE') }}

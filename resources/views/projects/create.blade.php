@@ -24,14 +24,7 @@
             <button type="submit" class="button is-primary">Create Project</button>
             </div>
             </div>
-            @if($errors->any())
-            
-                <div class="notification is-danger">
-                @foreach ($errors->all() as $error)
-                    <p>{{ $error }}</p>
-                @endforeach    
-                
-            @endif
+            @include('projects.errors')      
             </div>
         </form>
 </div>
