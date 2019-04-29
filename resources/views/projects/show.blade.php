@@ -12,17 +12,19 @@
             <h5>{{ $project->description }}</h5>
         </div>
 
-
          <div><a href="{{ $project->id }}/edit" type="submit" class="button is-primary">Edit</a></div>
          <br/>
+         <div class="box">
+        <p><b>Tasks</b></p>
+
         @if($project->tasks->count())
         <div>
         @foreach($project->tasks as $task)
-        <div class="box">
+
         <form method="POST" action="/tasks/{{ $task->id }}">
             {{ method_field('PATCH') }}
             {{ csrf_field() }}
-            <p><b>Tasks</b></p>
+
             <label class="checkbox {{( $task->completed ? 'iscomplete' : '' )}}" for="completed">
                 <input type="checkbox" name="completed" onchange="this.form.submit()" {{( $task->completed ? 'checked' : '' )}}>            
                     {{$task->description}}
